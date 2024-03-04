@@ -8,6 +8,8 @@ import {
     FormHelperText,
     Center,
 } from '@chakra-ui/react'
+import Nevbar from '../Component/Nevbar/Nevbar';
+import Footer from '../Component/Footer/Footer';
 
 export default function Checkout() {
     const [input, setInput] = useState('')
@@ -25,6 +27,8 @@ flexDirection:'collumn',
 p:'5'
 }
     return (<>
+<Nevbar/>
+
     <Heading textAlign={'center'} m={5} mb={5} p={0}>Please enter Your detail</Heading>
         <Center>
             <Flex {...formstyle} >
@@ -78,6 +82,8 @@ p:'5'
             </FormControl>
             </Flex>
         </Center>
+
+        <Footer/>
         </>
     )
 }

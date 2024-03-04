@@ -11,7 +11,7 @@ import { useContext } from 'react';
 import { Allcontext } from '../../ContextAPI/ContextProvider';
 export default function Nevbar() {
   const { loginWithRedirect,logout,isAuthenticated } = useAuth0();
-const {cartitemCount} = useContext(Allcontext)
+const {cartitemCount,setquary} = useContext(Allcontext)
 
 
   const buttonStyle = {
@@ -116,6 +116,7 @@ h={"300px"}>
             bg={"white"}
             borderRadius={20}
             variant='outline none'
+            onChange={(e)=>setquary(e.target.value)}
           />
           <IconButton aria-label='Search database' bg={"white"} ><Image w={"50%"} src={'https://img.icons8.com/?size=60&id=59878&format=png'} /></IconButton>
         </Box>

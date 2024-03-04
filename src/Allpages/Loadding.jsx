@@ -1,8 +1,11 @@
 import { Box, Center, Flex, Spinner } from '@chakra-ui/react'
 import React from 'react'
+import Nevbar from '../Component/Nevbar/Nevbar'
+import Footer from '../Component/Footer/Footer'
 
 export default function Loadding() {
-    return (
+    return (<>
+
         <Box
         display={"Flex"}
         alignItems={"Center"}
@@ -18,5 +21,7 @@ export default function Loadding() {
                 size='xl'
             />
         </Box>
-    )
+
+        <Footer/>
+        </>)
 }

@@ -13,9 +13,7 @@ export default function AllRoutes() {
       <Route path='/product_detail/:product_id' element={
         <PrivateRoutes>
           <ProductDetailpage />
-
         </PrivateRoutes>
-
       } />
       <Route path='/cart' element={
         <PrivateRoutes>
@@ -28,7 +26,7 @@ export default function AllRoutes() {
         </PrivateRoutes>
       } />
 
-<Route path='/login'><Loginpage/></Route>
+<Route path='/login'  element={<Loginpage/>}/>
     </Routes>
 
 

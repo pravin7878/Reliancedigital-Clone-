@@ -6,6 +6,8 @@ import { Allcontext } from '../ContextAPI/ContextProvider'
 import Loadding from './Loadding'
 import ErrorHendeler from './Error'
 import { Link } from 'react-router-dom'
+import Nevbar from '../Component/Nevbar/Nevbar'
+import Footer from '../Component/Footer/Footer'
 
 export default function ProductDetailpage() {
     const { product_id } = useParams()
@@ -48,7 +50,8 @@ export default function ProductDetailpage() {
     if (IsError) {
         return <ErrorHendeler />
     }
-    return (
+    return (<>
+    <Nevbar/>
         <Center display={'flex'} flexDirection={'column'}>
             <Card maxW='sm' h={'auto'} mt={10} border={'solid 1px blue'}>
                 <CardBody >
@@ -102,5 +105,7 @@ export default function ProductDetailpage() {
             <Link to={'/'}>
                 <Button bg={'red'} color={'white'} m={5} fontSize={'13px'} _hover={{ bg: 'lightred' }}>CONTINUE SHOPPING</Button></Link>
         </Center>
-    )
+
+        <Footer/>
+        </>)
 }

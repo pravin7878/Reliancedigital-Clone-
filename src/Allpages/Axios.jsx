@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useStatStyles } from '@chakra-ui/react';
 import AllProduct from './AllProduct';
+import { Allcontext } from '../ContextAPI/ContextProvider';
 export default function Axios() {
     const [data,setdata] = useState()
 const [isLoadding, setisLoadding] = useState(false);
 const [err, seterr] = useState(false)
-
+const {quary} = useContext(Allcontext)
+console.log(quary)
 
     const getData =async ()=>{
         setisLoadding(true)
         try {
-        const res = await axios.get(`https://fakestoreapi.com/products`)
+        const res = await axios.get(`https://fakestoreapi.com/products?q=${'ele'}`)
         setdata(res.data)
         setisLoadding(false)
         } catch (error) {
@@ -26,6 +28,6 @@ const [err, seterr] = useState(false)
     useEffect(()=>{
        getData()
        
-    },[])
+    },[quary])
   return <AllProduct data={data} isLoadding={isLoadding} err={err}/>
 }

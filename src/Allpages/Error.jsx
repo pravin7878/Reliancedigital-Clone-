@@ -1,8 +1,11 @@
 import { Box,Text } from '@chakra-ui/react'
 import React from 'react'
+import Nevbar from '../Component/Nevbar/Nevbar'
+import Footer from '../Component/Footer/Footer'
 
 export default function ErrorHendeler() {
-  return (
+  return (<>
+  <Nevbar/>
     <Box
         display={"Flex"}
         alignItems={"Center"}
@@ -12,5 +15,6 @@ export default function ErrorHendeler() {
         >
             <Text color={"red"}>Sothing went Wrong Please Repress the page</Text>
         </Box>
-  )
+        <Footer/>
+        </>)
 }
