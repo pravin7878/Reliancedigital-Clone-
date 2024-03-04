@@ -5,7 +5,6 @@ import Footer from '../Component/Footer/Footer'
 
 export default function ErrorHendeler() {
   return (<>
-  <Nevbar/>
     <Box
         display={"Flex"}
         alignItems={"Center"}

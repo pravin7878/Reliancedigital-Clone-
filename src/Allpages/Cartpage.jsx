@@ -18,10 +18,13 @@ export default function Cartpage() {
                 <Link to={'/'}>
                     <Button bg={'red'} color={'white'} m={5} fontSize={'13px'}>CONTINUE SHOPPING</Button></Link>
             </Flex>
+
+            <Box>
+                
+            </Box>
         </Center>
     }
     return (<>
-        <Nevbar />
 
         <Flex flexDirection={'column'}>
             {cartitem?.map((item) => {
