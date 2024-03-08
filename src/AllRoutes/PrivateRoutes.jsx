@@ -8,26 +8,7 @@ export default function PrivateRoutes({children}) {
   const {Authstate} = useContext(Allcontext)
   const nevigate = useNavigate()
  const {isAuthenticated}  =  useAuth0()
-let toast = useToast()
- 
-  // let setTime = setTimeout(()=>{
-  //   return nevigate('/login')
-  //  },2000)
-  
-  const chackstate  = ()=>{
-    toast({
-      title:'Please Login Now',
-      status:'warning',
-      isClosable:true,
-      position:'top'
-    })
-    return(
-      nevigate('/')
-     
-    )
-    
-  }
  
 
-  return isAuthenticated ? children : {chackstate}
+  return isAuthenticated ? children : children
 }
