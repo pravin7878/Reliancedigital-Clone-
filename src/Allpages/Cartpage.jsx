@@ -33,37 +33,7 @@ export default function Cartpage() {
         setTotalPrice(totalPrice);
     }, [Cart]);
 
-    //    const getOrder = ()=>{
-    //     // const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-    //     setorderprice(total);
-    //     console.log(total);
-
-    //         }
-
-    // useEffect(()=>{
-    //     getOrder()
-    //     },[cartItems])
-
-
-    // masage={'Right Now Only 5 Stock is availeble'} status={warning}
-
-    // const quantityIncrease = (id) => {
-
-    //     console.log(cartitem[index].price * 2);
-    //     // return quantity < 5 ? setquantity(quantity + 1) : null
-    // }
-
-
-    // const quantityDecrease = (id) => {
-    //     return state.cartItems[id].quantity+1
-    //     //  return state.cartItems.quantity > 1 ? state.item.quantity+1 : null
-    //    }
-
-    // console.log(cartitem[index]);
-
-
-
-
+ 
     if (state.cartItems.length == 0) {
         return <Center>
             <Flex flexDirection={'column'} >
@@ -78,20 +48,15 @@ export default function Cartpage() {
 
 
     const removeItem = (id) => {
-
-        // console.log(id);
-        // Cart?.filter((item, filterId) => {
-        //     // console.log(filterId);
-        //     if (filterId !== id) {
-        //        console.log(item); 
-        //     }
-        // })
-
-
+toast({
+    title:'Item Successfully Deleted',
+    status:'success',
+    isClosable:true,
+    position:'top'
+})
         const updatedCart = [...Cart];
         updatedCart.splice(id, 1);
         setCart(updatedCart);
-
     }
 
 

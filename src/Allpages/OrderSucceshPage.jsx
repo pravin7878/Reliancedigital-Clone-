@@ -1,14 +1,20 @@
-import { Alert, AlertDescription, AlertIcon, AlertTitle } from '@chakra-ui/react'
+import { Alert, AlertDescription, AlertIcon, AlertTitle, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Loadding from './Loadding'
-
+const toast = useToast()
 export default function OrderSucceshPage() {
  const [isLoadding,setisLoadding] =  useState(false)   
     
-
+ toast({
+  title:'Order Success',
+  status:'success',
+  isClosable:true,
+  position:'top'
+})
  
 
-  return (
+  return (<>
+  
 < Alert
   status='success'
   variant='subtle'
@@ -30,7 +36,12 @@ export default function OrderSucceshPage() {
     Thanks for Palecing Order. Our team will  dispatch to Your Product soon.
   </AlertDescription>
 </Alert>
-  )
+
+
+<Link to={'/'}>
+<Button bg={'red'} _hover={{ bg: 'black' }} color={'white'} m={5} fontSize={'13px'} >CONTINUE SHOPPING</Button>
+</Link>
+</> )
   }
 
 
