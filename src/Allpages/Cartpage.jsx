@@ -35,16 +35,17 @@ export default function Cartpage() {
 
  
     if (state.cartItems.length == 0) {
-        return <Center>
+        return(<>
+         <Center pt={'150px'}>
             <Flex flexDirection={'column'} >
                 <Image src={'https://www.reliancedigital.in/build/client/images/emptycart.png'} />
                 <Text>Your Shopping Cart is Empty</Text>
                 <Link to={'/'}>
                     <Button bg={'red'} color={'white'} m={5} fontSize={'13px'}>CONTINUE SHOPPING</Button></Link>
             </Flex>
-
         </Center>
-    }
+        <Footer/>
+        </>)}
 
 
     const removeItem = (id) => {

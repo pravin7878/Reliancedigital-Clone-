@@ -1,6 +1,7 @@
 import { Alert, AlertDescription, AlertIcon, AlertTitle, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import Loadding from './Loadding'
+import Footer from '../Component/Footer/Footer'
 const toast = useToast()
 export default function OrderSucceshPage() {
  const [isLoadding,setisLoadding] =  useState(false)   
@@ -41,6 +42,7 @@ export default function OrderSucceshPage() {
 <Link to={'/'}>
 <Button bg={'red'} _hover={{ bg: 'black' }} color={'white'} m={5} fontSize={'13px'} >CONTINUE SHOPPING</Button>
 </Link>
+<Footer/>
 </> )
   }
 

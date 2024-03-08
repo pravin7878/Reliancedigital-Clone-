@@ -14,6 +14,7 @@ export default function ErrorHendeler() {
         justifyContent={"Center"}
         w={"100vw"}
         h={"100vh"}
+        
         >
           {toast({title:'othing went Wrong Please Repress the page',
         position:'top',
