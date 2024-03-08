@@ -2,8 +2,8 @@ import { Alert, AlertDescription, AlertIcon, AlertTitle, useToast } from '@chakr
 import React, { useEffect, useState } from 'react'
 import Loadding from './Loadding'
 import Footer from '../Component/Footer/Footer'
-const toast = useToast()
 export default function OrderSucceshPage() {
+const toast = useToast()
  const [isLoadding,setisLoadding] =  useState(false)   
     
  toast({
