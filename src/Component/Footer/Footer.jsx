@@ -20,7 +20,7 @@ let FooterLinksList4 = [
 ]
 export default function Footer() {
     return (<>
-        <Box bg={'rgb(0, 51, 128)'}>
+        <Box bg={'rgb(0, 51, 128)'} display={{base:'none',md:'block'}}>
             <SimpleGrid columns={4} spacing={20} w={'90%'} m={'auto'} color={'white'} p={5} >
                 <Box>
                     <Text fontSize={'md'}>PRODUCT CATEGORIES</Text>
@@ -53,9 +53,9 @@ export default function Footer() {
         </Box>
 
 
-        <Box bg={'rgb(10, 36, 74)'} textAlign={'center'} color={'white'}>
+        <Box bg={'rgb(10, 36, 74)'} textAlign={'center'} color={'white'} >
             <Text p={5}>Disclaimer</Text>
-            <Container maxW={'81%'} borderBottom={'solid 1px white'} fontSize={'11px'} pb={5}>
+            <Container maxW={'81%'} borderBottom={'solid 1px white'} fontSize={'11px'} pb={5} display={{base:'none' ,md:'block'}}>
             Product prices, offers and availability are subject to change from time to time. All prices are inclusive of taxes. Product colours & images are only for illustration and they may not exactly match with the actual product. Product specs are subject to change & may vary from actual product. While every care is taken to avoid inaccuracies in content, these are provided as is, without warranty of any kind.
             </Container>
             <Text p={5}> © 2024 Reliance Digital. All Rights Reserved.</Text>

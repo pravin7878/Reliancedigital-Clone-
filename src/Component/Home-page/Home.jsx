@@ -15,7 +15,7 @@ export default function Home() {
   const sliderStyling = {
     h:"auto",
   }
-  return (<Box 
+  return (<Box pt={'150px'}
   {...sliderStyling}
   >
    

@@ -5,5 +5,13 @@ import { useNavigate } from 'react-router-dom'
 export default function PrivateRoutes({children}) {
   const nevigate = useNavigate()
  const {isAuthenticated}  =  useAuth0()
-  return isAuthenticated ? children : nevigate('/login')
+
+ 
+  let setTime = setTimeout(()=>{
+    return nevigate('/login')
+   },2000)
+  
+ 
+
+  return isAuthenticated ? children : setTime
 }

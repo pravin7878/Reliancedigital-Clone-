@@ -8,12 +8,14 @@ export default function Axios() {
     const [isLoadding, setisLoadding] = useState(false);
     const [err, seterr] = useState(false)
     const { quary } = useContext(Allcontext)
-    console.log(quary)
+   
 
     const getData = async () => {
         setisLoadding(true)
         try {
-            const res = await axios.get(`https://fakestoreapi.com/products?search=${quary}`)
+            // const res = await axios.get(`https://fakestoreapi.com/products?search=${quary}`)
+
+            const res = await axios.get(`https://rus-digital-televisions.onrender.com/allproduct`)
 
             // const res = await axios({
             //     method: 'get',

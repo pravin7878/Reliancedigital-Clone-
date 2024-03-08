@@ -7,12 +7,12 @@ import { CollapseEx } from '../../PracticeComponent/CollapseEx';
 
 // For Login
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Allcontext } from '../../ContextAPI/ContextProvider';
+import NevbarMenu from './NevbarMenu';
 export default function Nevbar() {
   const { loginWithRedirect,logout,isAuthenticated } = useAuth0();
-const {cartitemCount,setquary} = useContext(Allcontext)
-
+const {state,setquary} = useContext(Allcontext)
 
   const buttonStyle = {
     bg: 'none',
@@ -35,9 +35,12 @@ h={"300px"}>
   </Box>
   }
 
+  
  
   return (
-    <Box>
+    <Box position="fixed"
+    width="100%"
+    zIndex="1000">
       <Box
         h={"20px"}
         // borderBottom={"solid  0.5px white"}
@@ -45,13 +48,35 @@ h={"300px"}>
         display={"flex"}
         justifyContent={"space-between"}
       >
-       
-        <Box w={"30%"} ></Box>
+       {/* Mobile Nevbar */}
+        <Box w={{base:'100%', md:"30%"}} display={'flex'}  justifyContent={'space-around'}>
+          <Box display={{base:'block' ,md:'none'}} w={'30%'} >
+          <NevbarMenu />
+          </Box>
+          <Box display={{base:'block' ,md:'none'}} w={'30%'} textAlign={'left'}>
+          <Link
+              as={RouterLink}
+              fontStyle="normal"
+              fontWeight="700"
+              color="rgb(255, 255, 255)"
+              fontSize=" 15px"
+              lineHeight="20px"
+              w={"30%"}
+              to={"/cart"}
+              display={"flex"}
+              alignItems={"center"}
 
-        <Box w={"30%"} ></Box>
+            >
+              <Image width="10" height="6" m={"5px"} src="https://img.icons8.com/ios-glyphs/30/FFFFFF/shopping-cart--v1.png" alt="shopping-cart--v1" />
+              Cart: <Text borderRadius={10} pl ={2} pr={2} bg={'white'} ml={1} color={'black'}> {state.cartItems.length}</Text>
+            </Link>
+          </Box>
+        </Box>
+
+        <Box w={"30%"}  display={{base:'none', md:"block"}}></Box>
 
         <Box
-          display="flex"
+          display={{base:'none', md:"flex"}}
           alignItems="center"
           justifyContent="space-around"
           textAlign={"center"}
@@ -104,34 +129,37 @@ h={"300px"}>
         justifyContent={'space-around'}
         alignItems={"center"}
       >
-        <Box><Image src={"https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg"} /></Box>
+        <Box ><Image w={{base:'70%' ,md:'100%'}} src={"https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg"} /></Box>
         <Box bg={"white"}
           borderRadius={20}
-          pr={5}>
+          pr={5}
+         >
           <Input
-            htmlSize={40}
-            width='auto'
-            // variant='filled'
+            // htmlSize={[10,20,30,40]}
+            width={['70px','140px','200px','350px']}
+            // variat='filled'
+            fontSize={{base:'10px'}}
+          
             placeholder='Find your favorite products'
             bg={"white"}
-            borderRadius={20}
+            borderRadius={[10,20]}
             variant='outline none'
             onChange={(e)=>setquary(e.target.value)}
           />
-          <IconButton aria-label='Search database' bg={"white"} ><Image w={"50%"} src={'https://img.icons8.com/?size=60&id=59878&format=png'} /></IconButton>
+          <IconButton aria-label='Search database' bg={"white"} ><Image display={{base:'none' , md:'block'}} w={"50%"} src={'https://img.icons8.com/?size=60&id=59878&format=png'} /></IconButton>
         </Box>
         <Box
           alignItems={"center"}
-          display="flex"
           justifyContent="end"
           // justifyItems={"end"}
           h={"auto"}
           w={"30%"}
           textAlign={"right"}
-
+          display={{ base: 'none', md: 'flex' }}
         >
           <Box
             m={"6px"}
+            
           >
             <Link
               fontStyle="normal"
@@ -157,14 +185,13 @@ h={"300px"}>
               fontSize=" 15px"
               lineHeight="20px"
               w={"30%"}
-              // borderRight={"1px solid white"}
               to={"/cart"}
               display={"flex"}
               alignItems={"center"}
 
             >
               <Image width="10" height="6" m={"5px"} src="https://img.icons8.com/ios-glyphs/30/FFFFFF/shopping-cart--v1.png" alt="shopping-cart--v1" />
-              Cart:{cartitemCount}
+              Cart: <Text borderRadius={10} pl ={2} pr={2} bg={'white'} ml={1} color={'black'}> {state.cartItems.length}</Text>
             </Link>
           </Box>
 

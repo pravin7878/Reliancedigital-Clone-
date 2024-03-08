@@ -6,6 +6,7 @@ import Cartpage from '../Allpages/Cartpage'
 import Checkout from '../Allpages/Checkout'
 import PrivateRoutes from './PrivateRoutes'
 import Loginpage from '../Allpages/Loginpage'
+import OrderSucceshPage from '../Allpages/OrderSucceshPage'
 export default function AllRoutes() {
   return (
     <Routes>
@@ -15,6 +16,7 @@ export default function AllRoutes() {
           <ProductDetailpage />
         </PrivateRoutes>
       } />
+
       <Route path='/cart' element={
         <PrivateRoutes>
           <Cartpage />
@@ -26,10 +28,10 @@ export default function AllRoutes() {
         </PrivateRoutes>
       } />
 
-<Route path='/login'  element={<Loginpage/>}/>
+      <Route path='/login' element={<Loginpage />} />
+
+
+      <Route path='/Ordersuccess' element={<OrderSucceshPage />} />
     </Routes>
-
-
-
   )
 }
